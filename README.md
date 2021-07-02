@@ -24,7 +24,7 @@ pip3 install django-widget-tweaks
 pip3 install django-cleanup
 ```
 
-2. Set up django
+__2. Set up django__
 
 __Dans le fichier settings__
    * changer votre clef secrete
