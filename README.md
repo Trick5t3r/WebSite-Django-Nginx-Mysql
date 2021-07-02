@@ -27,10 +27,42 @@ pip3 install django-cleanup
 __2. Set up django__
 
 __Dans le fichier settings__
-   * changer votre clef secrete
-   * mettre les bons nom de domaine
-   * mettre l'acces a la base de donnée
-   * adapter votre language_code
+   * change your secret key and put yours
+```python
+SECRET_KEY = 'YOUR_SECRET_KEY'
+```
+   * change allowed hosts
+```python
+ALLOWED_HOSTS = ['127.0.0.1', 'website.com']
+```
+   * Change the database and put the right information
+```python
+# Database
+# https://docs.djangoproject.com/en/3.1/ref/settings/#databases
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'hx2DB',
+        'USER': 'hx2User',
+        'PASSWORD' : 'VivelaHX2!',
+        'HOST' : 'localhost',
+        'PORT' : '3306',
+    }
+}
+```
+
+   * Change your language
+```python
+# Internationalization
+# https://docs.djangoproject.com/en/3.1/topics/i18n/
+
+LANGUAGE_CODE = 'fr-FR'
+TIME_ZONE = 'UTC'
+USE_I18N = True
+USE_L10N = True
+USE_TZ = True
+```
 
 ## Nginx <a name="Nginx"></a>
 
