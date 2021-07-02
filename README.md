@@ -13,11 +13,13 @@ We will first see how to configure the site backend with django and then we will
 
 ## Faire le tuto installation de django <a name="Django"></a>
 * Depedenncies \
+'''
 pip3 install django \
 pip3 install bootstrap4\
 pip3 install mysqlclient \
 pip3 install django-widget-tweaks \
 pip3 install django-cleanup
+'''
 
 * Set up django \
 __Dans le fichier settings__ \
