@@ -14,6 +14,8 @@ We will first see how to configure the site backend with django and then we will
 
 ## Django Installation <a name="Django"></a>
 1. Depedencies
+
+Installation of necessary packages 
 ```
 pip3 install django 
 pip3 install bootstrap4
