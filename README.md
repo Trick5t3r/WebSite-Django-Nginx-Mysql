@@ -10,6 +10,8 @@ A website for a completely classic school class coded in django-nginx
 ## Introduction <a name="introduction"></a>
 The purpose of this repository is to help anyone create a website. In my case, I created a website for my class during my first year of preparatory class for the "grandes écoles", this class is called HX2. Hope this tutorial and my code helps you out, and if you have any questions or issues please feel free to contact me.
 
+This whole tutorial was done with hx2 as the site name, so if you want to change it adapt the set of files provided accordingly. 
+
 We will first see how to configure the site backend with django and then we will see how to configure nginx for the site frontend. 
 
 ## Django Installation <a name="Django"></a>
@@ -78,11 +80,6 @@ Edit the file ```gunicorn_start.sh```
 ```python
 NAME="hx2Site"                              #Name of the application (*)
 ```
-* Adapt the usernam and the group name if you didn't create the same user as me (www-data)
-```python
-USER=www-data                                        # the user to run as (*)
-GROUP=www-data                                     # the group to run as (*)
-```
 
 * Adapt the two following line with your right absolut path
 ```python
@@ -90,6 +87,13 @@ DJANGODIR=/var/www/hx2/hx2Site/            # Django project directory (*)
 SOCKFILE=/var/www/hx2/run/gunicorn.sock        # we will communicate using this unix socket (*)
 
 ```
+
+* Adapt the usernam and the group name if you didn't create the same user as me (www-data)
+```python
+USER=www-data                                        # the user to run as (*)
+GROUP=www-data                                     # the group to run as (*)
+```
+
 
 
 ## Nginx <a name="Nginx"></a>
