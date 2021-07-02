@@ -35,7 +35,7 @@ SECRET_KEY = 'YOUR_SECRET_KEY'
 ```python
 ALLOWED_HOSTS = ['127.0.0.1', 'website.com']
 ```
-   * Change the database and put the right information
+   * Change the database and put the right information (create a database and a user dedicated to django )
 ```python
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
