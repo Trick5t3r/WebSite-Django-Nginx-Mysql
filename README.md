@@ -93,6 +93,11 @@ SOCKFILE=/var/www/hx2/run/gunicorn.sock        # we will communicate using this 
 USER=www-data                                        # the user to run as (*)
 GROUP=www-data                                     # the group to run as (*)
 ```
+Save and exit the file
+
+Copy the file ```gunicorn_hx2Site.service``` in ```/etc/systemd/system/```
+
+Run the command ```service gunicorn_hx2Site start```
 
 
 
