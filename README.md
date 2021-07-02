@@ -19,7 +19,7 @@ pip3 install bootstrap4
 pip3 install mysqlclient 
 pip3 install django-widget-tweaks 
 pip3 install django-cleanup
-```python
+```
 
 * Set up django \
 __Dans le fichier settings__ \
