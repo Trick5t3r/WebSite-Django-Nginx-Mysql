@@ -13,7 +13,7 @@ The purpose of this repository is to help anyone create a website. In my case, I
 We will first see how to configure the site backend with django and then we will see how to configure nginx for the site frontend. 
 
 ## Faire le tuto installation de django <a name="Django"></a>
-* Depedenncies
+1. Depedenncies
 ```
 pip3 install django 
 pip3 install bootstrap4
@@ -22,7 +22,7 @@ pip3 install django-widget-tweaks
 pip3 install django-cleanup
 ```
 
-* Set up django
+2. Set up django
 
 __Dans le fichier settings__
    * changer votre clef secrete
