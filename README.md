@@ -25,8 +25,11 @@ pip3 install django-cleanup
 ```
 
 __2. Set up django__
+Place the folder hx2 in the right directory
 
-__Dans le fichier settings__
+For the ubuntu 20 users, create a user "www-data" and a group "www-data" with the appropriate permissions
+
+__The in the settings file__
    * change your secret key and put yours
 ```python
 SECRET_KEY = 'YOUR_SECRET_KEY'
@@ -67,6 +70,27 @@ USE_L10N = True
 
 USE_TZ = True
 ```
+
+
+__2. Set up gunicorn__
+Edit the file ```gunicorn_start.sh```
+* Put your own name
+```python
+NAME="hx2Site"                              #Name of the application (*)
+```
+* Adapt the usernam and the group name if you didn't create the same user as me (www-data)
+```python
+USER=www-data                                        # the user to run as (*)
+GROUP=www-data                                     # the group to run as (*)
+```
+
+* Adapt the two following line with your right absolut path
+```python
+DJANGODIR=/var/www/hx2/hx2Site/            # Django project directory (*)
+SOCKFILE=/var/www/hx2/run/gunicorn.sock        # we will communicate using this unix socket (*)
+
+```
+
 
 ## Nginx <a name="Nginx"></a>
 
