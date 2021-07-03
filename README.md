@@ -5,12 +5,17 @@ A website for a completely classic school class coded in django-nginx
 1. [Introduction](#introduction)
 2. [Django installation](#Django)
 3. [Nginx installation](#Nginx)
-4. [Complements : le Siphoneur](#Siphoneur)
+4. [Usefull Additions](#Additions)
+5. [Complements : le Siphoneur](#Siphoneur)
 
 ## Introduction <a name="introduction"></a>
 The purpose of this repository is to help anyone create a website. In my case, I created a website for my class during my first year of preparatory class for the "grandes écoles", this class is called HX2. Hope this tutorial and my code helps you out, and if you have any questions or issues please feel free to contact me.
 
 This whole tutorial was done with hx2 as the site name, so if you want to change it adapt the set of files provided accordingly. 
+
+The structure of the site is simple: a home page (which in my case brings together school subjects), a presentation page of these sections with sub-sections, and finally a sub-sections page presenting the documents grouped by topic.
+
+The administration pages reflect the same structure, and I added a custom filter for easier access to each subsection and documents (all this is discribe after)
 
 We will first see how to configure the site backend with django and then we will see how to configure nginx for the site frontend. 
 
@@ -99,8 +104,8 @@ Copy the file ```gunicorn_hx2Site.service``` in ```/etc/systemd/system/```
 
 Run the command ```service gunicorn_hx2Site start```
 
-
-
 ## Nginx <a name="Nginx"></a>
+
+## Useful additions  <a name="Additions"></a>
 
 ## Complements : le Siphoneur <a name="Siphoneur"></a>
