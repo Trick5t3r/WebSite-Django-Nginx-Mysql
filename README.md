@@ -126,8 +126,7 @@ __useful command__
 
 
 ## Complements : le Siphoneur <a name="Siphoneur"></a>
-Le siphonaur aim to siphon a main directory with the same structure of the site and put directly all the document on the web site automatically.
-
+The "Siphoneur" aims to siphon a main directory with the same structure as the site and to put all the documents directly on the website automatically. 
 Change the absolute path or remove the ```#``` to take the path as argument
 ```python
 #walk_dir = sys.argv[1]
