@@ -3,10 +3,11 @@ A website for a completely classic school class coded in django-nginx-mysql
 
 # Table of contents
 1. [Introduction](#introduction)
-2. [Django installation](#Django)
-3. [Nginx installation](#Nginx)
-4. [Usefull Additions](#Additions)
-5. [Complements : le Siphoneur](#Siphoneur)
+2. [Mysql set up](#Mysql)
+3. [Django set up](#Django)
+4. [Nginx set up](#Nginx)
+5. [Usefull Additions](#Additions)
+6. [Complements : le Siphoneur](#Siphoneur)
 
 ## Introduction <a name="introduction"></a>
 The purpose of this repository is to help anyone create a website. In my case, I created a website for my class during my first year of preparatory class for the "grandes écoles", this class is called HX2. Hope this tutorial and my code helps you out, and if you have any questions or issues please feel free to contact me.
@@ -25,7 +26,10 @@ Moreover, the management of the media is pretty simple, in the directory ```medi
 
 We will first see how to configure the site backend with django and then we will see how to configure nginx for the site frontend. 
 
-## Django Installation <a name="Django"></a>
+## Mysql Set Up <a name="Mysql"></a>
+If you don't want to set up mysql skip thie section and adapt the settings file as explain after.
+
+## Django Set Up <a name="Django"></a>
 __1. Depedencies__
 
 Installation of necessary packages 
@@ -112,7 +116,7 @@ Run the command ```service gunicorn_hx2Site start```
 
 And normally you have finished installing your django server, it is operational. You can join it on the port 8000 in localhost or on your local network if you opened this port.
 
-## Nginx <a name="Nginx"></a>
+## Nginx Set Up <a name="Nginx"></a>
 
 ## Useful additions  <a name="Additions"></a>
 
