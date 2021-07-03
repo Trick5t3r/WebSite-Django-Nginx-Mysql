@@ -1,0 +1,12 @@
+[Unit]
+Description=hx2Site gunicorn daemon
+
+[Service]
+Type=simple
+Environment="LANG=fr_FR.UTF-8,LC_ALL=fr_FR.UTF-8"
+User=www-data
+ExecStart=/var/www/hx2/gunicorn_start.sh
+
+
+[Install]
+WantedBy=multi-user.target

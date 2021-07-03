@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            {% for matiere in matieres|dictsort:"name" %}
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ matiere.name}}</h5>
+                        {% autoescape off %}
+                        <p class="card-text">{{ matiere.description }}</p>
+                        {% endautoescape %}
+                        <a href="{% url 'matieresScolaire'  matiere.name %}" class="btn btn-primary" style="background:#2775aa">Let's go</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="container" style="margin-top: 10px;">
+        <div class="row">
+            <div class="col-sm-6">
+                    <a class="nav-link" href="{% get_media_prefix %}permanent/DjPatrickSound.mp3"><img src="{% get_media_prefix %}permanent/dj_banana.jpg" alt="Dj Banana"  style="border-radius:30%;width: 32%;"></a>
+            </div>
+            <div class="col-sm-6">
+                    <a class="nav-link" href="{% get_media_prefix %}permanent/photoClasseHx2_2021.jpg"><img src="{% get_media_prefix %}permanent/photoClasseHx2_2021.jpg" alt="Photo de Classe"  style="border-radius:30%;width: 38%;"></a>
+                    <p>2020-2021</p>
+            </div>
+    </div>
+{% endblock %}

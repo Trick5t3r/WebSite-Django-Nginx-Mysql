@@ -1,0 +1,70 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'all.min.css' %}">
+    <link rel="icon" href="/media/static/HX2_logo_accueil.jpg">
+    <script src="{% static 'jquery-1.9.1.min.js' %}"></script>
+    <script src="{% static 'popper.min.js' %}"></script>
+    <script src="{% static 'bootstrap.min.js' %}"></script>
+    {% block linkCss %}{% endblock %}
+    <title>{% block title %}HX2 Website{% endblock %}</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#00274f">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'mainPage' %}">HX2</a>
+            <div class="navbar" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto" style="flex-direction:row;">
+		    {% if user.is_authenticated %}
+		    	<li class="nav-item dropdown" style="margin-left: 1rem;">
+                        	<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ request.session.currentYear }}</a>
+                        	<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="position: absolute !important;min-width: 0rem !important;padding: 0.4rem;left: -21%;">
+                                	{% for yearA in yearsAvailable %}
+						<a class="dropdown-item" style="padding: 0.5rem;" href="?setYear={{ yearA }}">{{ yearA }}</a>
+					{% endfor %}
+                        	</div>
+                    	</li>                    
+		    {% endif %}
+
+		    <li class="nav-item" style="margin-left: 1rem;">	
+                        {% if user.is_authenticated %}
+                                <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
+                        {% else %}
+                                <a class="nav-link" href="{% url 'signin' %}">Sign in</a>
+                        {%endif %}
+                    </li>
+		</ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="jumbotron bg-image" style="background-image: url({% static 'bann_sans_couleur.png' %}); background-position: center; background-repeat: no-repeat; background-color: #2775aa;">
+            <h1 class="display-4">Hx2</h1>
+            <p class="lead">Hx2 is wunderbar</p>
+            
+        </div>
+    </div>
+
+    {% block content %}
+    {% endblock %}
+
+    <footer>
+          <p style="color: gray;margin-top: 20px;">Made by <a href="{% get_media_prefix %}permanent/AneTrollTrickster.jpg" style="text-decoration: none;color: inherit;">Trickster</a> in 2021. <a href="{% url 'admin:index' %}" style="text-decoration: underline;color: inherit;">Link to admin interface</a></p>
+        </footer>
+    </body>
+
+</body>
+
+</html>
+

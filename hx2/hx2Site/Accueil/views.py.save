@@ -1,0 +1,40 @@
+from django.shortcuts import render, redirect
+from django.http import HttpResponse
+from Matieres.models import MatiereScolaire
+from .forms import UserForm
+from django.contrib.auth import authenticate, login, logout
+from django.conf import settings
+from django.contrib.auth.decorators import login_required
+
+# Create your views here.
+
+@login_required
+def mainPage(request):
+	context = {}
+	matieres = MatiereScolaire.objects.all()
+	context['matieres'] = matieres
+	return render(request, 'Accueil/templateMainAccueil.html', context)
+
+
+
+def autentificationPage(request):
+	#https://docs.djangoproject.com/fr/2.2/topics/forms/
+	if request.method == 'POST':
+		form = UserForm(request.POST)
+		if form.is_valid():
+			user = authenticate(request, username=form.cleaned_data['identifiant'], password=form.cleaned_data['password'])
+			login(request, user)
+			if request.GET.get('next'):
+				return redirect(request.GET.get('next'))
+			else:
+				return redirect("mainPage")
+	else:
+		form = UserForm()
+	return render(request, 'Accueil/templateLogin.html', {'form':form})
+
+def logout_view(request):
+	logout(request)
+	return redirect(settings.LOGOUT_REDIRECT_URL)
+
+
+def views.protectedFile_vi

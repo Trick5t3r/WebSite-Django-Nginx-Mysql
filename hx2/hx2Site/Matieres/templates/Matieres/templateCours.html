@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load sort_list from matieresTags %}
+
+
+{% block linkCss %}
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title" style=" text-align: center;">{{ matiere_correspondante.name}}</h5>
+                        <p class="card-text"><b>{{ typeSelected }}</b></p>
+                        <div class="">
+                            {% regroup docs by theme as docs_list %}
+                            {% for different_theme in docs_list|sort_list %}
+                            <div id ="button_dropdown_{{ different_theme.grouper }}">
+                                {{ different_theme.grouper }}
+                                <div class="dropdown-divider"></div>
+                                    <div id="dropdown_categorie_ {{ different_theme.grouper }}" style="display:none;">
+                                    {% for document in different_theme.list|dictsort:"name" %}
+                                        <p style="margin-left: 1rem;"><a href="{{ document.file.url }}" target="_blank">{{ document.name }}</a></p>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            <script type="text/javascript">
+
+                            var element = document.getElementById("button_dropdown_{{ different_theme.grouper }}");
+
+
+                            element.addEventListener('click', function() {
+                                if (this !== event.target) return;
+                                var dropdownElement = document.getElementById("dropdown_categorie_ {{ different_theme.grouper }}");
+                                if (dropdownElement.style.display == "none"){
+                                    dropdownElement.style.display = "block";
+                                }else{
+                                    dropdownElement.style.display = "none";
+                                };
+                            });
+                            </script>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,55 @@
+server {
+        listen 80;
+        listen [::]:80;
+
+        server_name hx2.tlapp.net www.hx2.fr hx2.fr;
+        return 301 https://$server_name$request_uri;
+}
+
+server {
+        charset utf-8;        
+        listen 443 ssl;
+        listen [::]:443;
+
+        ssl_protocols TLSv1.2;
+        ssl_certificate /etc/letsencrypt/live/tlapp.net/fullchain.pem;
+	ssl_certificate_key /etc/letsencrypt/live/tlapp.net/privkey.pem;
+
+	ssl_ecdh_curve secp384r1;
+	ssl_ciphers EECDH+AESGCM:EECDH+CHACHA20:EECDH+AES;
+	ssl_prefer_server_ciphers on;
+	ssl_trusted_certificate /etc/letsencrypt/live/tlapp.net/chain.pem;
+	ssl_stapling on;
+	ssl_stapling_verify on;
+
+        root /var/www/hx2/hx2Site;
+        index index.html index.htm;
+
+        server_name hx2.fr www.hx2.fr hx2.tlapp.net;
+        
+        client_max_body_size 100M;
+
+        location / {
+               proxy_pass http://127.0.0.1:8000/;
+               proxy_read_timeout 300;
+               proxy_redirect off;
+               proxy_buffering off;
+               proxy_store off;
+               proxy_set_header Host $host;
+               proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+               
+        }
+ 
+        location /media/static/ {
+                
+                alias /var/www/hx2/hx2Site/media/static/;
+        }
+        location /media/fichiersdeposes/ {
+                internal;
+                alias /var/www/hx2/hx2Site/media/fichiersdeposes/;
+        }
+
+	
+
+
+}
