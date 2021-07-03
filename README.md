@@ -119,4 +119,22 @@ And normally you have finished installing your django server, it is operational.
 Explains tamplatags, templates base, dictioary, the document access system  ...
 Put useful command like runserver 0000 ...
 
+__useful command__ 
+* ```python python3 manage.py runserver``` with ```python 0.0.0.0``` to listen on all interface, ```python --insecure``` (but dangerous)
+* ```python python3 manage.py makemigrations``` and ```python python3 manage.py migrate```
+* ```python python3 manage.py shell```
+* ```python python3 manage.py runscript``` (but requires configurations so prefer the method that I use in "le siphoneur")
+
+
 ## Complements : le Siphoneur <a name="Siphoneur"></a>
+Le siphonaur aim to siphon a main directory with the same structure of the site and put directly all the document on the web site automatically.
+
+Change the absolute path or remove the ```python #``` to take the path as argument
+```python
+#walk_dir = sys.argv[1]
+walk_dir = "/path/to/the/folder/to/siphon/"
+```
+
+Run the commande
+
+```python python3 siphoneur.py```
