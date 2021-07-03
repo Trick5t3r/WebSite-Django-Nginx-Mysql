@@ -27,7 +27,7 @@ Moreover, the management of the media is pretty simple, in the directory ```medi
 We will first see how to configure the site backend with django and then we will see how to configure nginx for the site frontend. 
 
 ## Mysql Set Up <a name="Mysql"></a>
-If you don't want to set up mysql skip thie section and adapt the settings file as explain after.
+If you don't want to set up mysql skip this section and adapt the settings file as explain after.
 
 ## Django Set Up <a name="Django"></a>
 __1. Depedencies__
