@@ -118,7 +118,7 @@ And normally you have finished installing your django server, it is operational.
 
 Explains tamplatags, templates base, dictioary, the document access system  ...
 
-__useful command__ 
+__ Useful commands __ 
 * ```python python3 manage.py runserver``` with ```python 0.0.0.0``` to listen on all interface, ```python --insecure``` (but dangerous)
 * ```python python3 manage.py makemigrations``` and ```python python3 manage.py migrate```
 * ```python python3 manage.py shell```
@@ -133,6 +133,6 @@ Change the absolute path or remove the ```#``` to take the path as argument
 walk_dir = "/path/to/the/folder/to/siphon/"
 ```
 
-Run the commande
+Run the command
 
 ```python python3 siphoneur.py```
