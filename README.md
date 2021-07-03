@@ -110,7 +110,7 @@ Copy the file ```gunicorn_hx2Site.service``` in ```/etc/systemd/system/```
 
 Run the command ```service gunicorn_hx2Site start```
 
-And normally you have finished installing your django server, it is operational. You can join it on the port 8000 in localhost or on your local network if you opened he right access.
+And normally you have finished installing your django server, it is operational. You can join it on the port 8000 in localhost or on your local network if you opened this port.
 
 ## Nginx <a name="Nginx"></a>
 
