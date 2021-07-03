@@ -17,6 +17,12 @@ The structure of the site is simple: a home page (which in my case brings togeth
 
 The administration pages reflect the same structure, and I added a custom filter for easier access to each subsection and documents (all this is discribe after)
 
+There is a compartmentalization of users and files. Each file therefore belongs to a section which is attached to a compartment called here "Année". For a user to have access to this file, he must belong to a group with the same name as this "Année". A user can belong to several groups, so he can have access to several years. Finally, in my case, I had created 3 types of users, the Administrator with all the rights (in dango you can run the command ```python3 manage.py createsuperuser```), a user having only the right to consult the documents (you simply have to remove the access rights to the administrator interface, and give no permission) and a moderating user who had the right to access the administrator interface with the corresponding permissions and who could add files or sub-sections in the "Years" to which he belongs. 
+
+Moreover, the management of the media is pretty simple, in the directory ```media``` there are two others subdirectories ```fichiersdeposes``` and ```static```.
+* In ```static```, there are all the files necessary for the proper functioning of the site: style files and javascript files. (You can add your staticfiles with the command ```python3 manage.py collectstatic``` ). You can also put files used by your website that do not require the user to be logged in, for example your website logo. 
+* In ```fichiersdeposes``` there are all the uploaded files (as the French name suggests). These files are accessible by following the partitioning explained previously. There is also a subdirectory ```permanent```. In this subdirectory you put all the files used by your website but which requires the user to be at least logged in. 
+
 We will first see how to configure the site backend with django and then we will see how to configure nginx for the site frontend. 
 
 ## Django Installation <a name="Django"></a>
@@ -104,8 +110,13 @@ Copy the file ```gunicorn_hx2Site.service``` in ```/etc/systemd/system/```
 
 Run the command ```service gunicorn_hx2Site start```
 
+And normally you have finished installing your django server, it is operational. 
+
 ## Nginx <a name="Nginx"></a>
 
 ## Useful additions  <a name="Additions"></a>
+
+Explains tamplatags, templates base, dictioary, the document access system  ...
+Put useful command like runserver 0000 ...
 
 ## Complements : le Siphoneur <a name="Siphoneur"></a>
