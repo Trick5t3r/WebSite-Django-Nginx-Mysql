@@ -3,9 +3,9 @@ A website for a completely classic school class coded in django-nginx-mysql
 
 # Table of contents
 1. [Introduction](#introduction)
-2. [Mysql set up](#Mysql)
-3. [Django set up](#Django)
-4. [Nginx set up](#Nginx)
+2. [Mysql Set Up](#Mysql)
+3. [Django Set Up](#Django)
+4. [Nginx Set Up](#Nginx)
 5. [Usefull Additions](#Additions)
 6. [Complements : le Siphoneur](#Siphoneur)
 
