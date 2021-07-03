@@ -110,14 +110,13 @@ Copy the file ```gunicorn_hx2Site.service``` in ```/etc/systemd/system/```
 
 Run the command ```service gunicorn_hx2Site start```
 
-And normally you have finished installing your django server, it is operational. 
+And normally you have finished installing your django server, it is operational. You can join it on the port 8000 in localhost or on your local network if you opened he right access.
 
 ## Nginx <a name="Nginx"></a>
 
 ## Useful additions  <a name="Additions"></a>
 
 Explains tamplatags, templates base, dictioary, the document access system  ...
-Put useful command like runserver 0000 ...
 
 __useful command__ 
 * ```python python3 manage.py runserver``` with ```python 0.0.0.0``` to listen on all interface, ```python --insecure``` (but dangerous)
@@ -129,7 +128,7 @@ __useful command__
 ## Complements : le Siphoneur <a name="Siphoneur"></a>
 Le siphonaur aim to siphon a main directory with the same structure of the site and put directly all the document on the web site automatically.
 
-Change the absolute path or remove the ```python  #``` to take the path as argument
+Change the absolute path or remove the ```#``` to take the path as argument
 ```python
 #walk_dir = sys.argv[1]
 walk_dir = "/path/to/the/folder/to/siphon/"
