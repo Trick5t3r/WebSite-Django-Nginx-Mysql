@@ -1,5 +1,5 @@
 # WebSite
-A website for a completely classic school class coded in django-nginx 
+A website for a completely classic school class coded in django-nginx-mysql
 
 # Table of contents
 1. [Introduction](#introduction)
