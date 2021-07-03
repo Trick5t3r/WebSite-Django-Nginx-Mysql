@@ -135,4 +135,6 @@ walk_dir = "/path/to/the/folder/to/siphon/"
 
 Run the command
 
-```python python3 siphoneur.py```
+```python
+python3 siphoneur.py
+```
