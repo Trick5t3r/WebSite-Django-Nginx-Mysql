@@ -119,6 +119,73 @@ And normally you have finished installing your django server, it is operational.
 
 ## Nginx Set Up <a name="Nginx"></a>
 
+__1. Setup let's encrypt with OVH for https__
+Install dependecies
+```python
+pip install certbot 
+pip install certbot-dns-ovh
+```
+
+Create the config file at ```/etc/logrotate.d/cerbot``` with:
+```
+/var/log/letsencrypt/*.log {
+        monthly
+        rotate 6
+        compress
+        delaycompress
+        notifempty
+        missingok
+        create 640 root adm
+}
+```
+
+Create the API
+```
+GET /domain/zone/
+GET: /domain/zone/{domain.name}/
+GET /domain/zone/{domain.ext}/status
+GET /domain/zone/{domain.ext}/record
+GET /domain/zone/{domain.ext}/record/*
+POST /domain/zone/{domain.ext}/record
+POST /domain/zone/{domain.ext}/refresh
+DELETE /domain/zone/{domain.ext}/record/*
+```
+
+Connect to https://api.ovh.com/createToken/ to get the rigth information access for your API
+
+Create ```/root/.ovhapi``` and add:
+```
+dns_ovh_endpoint = ovh-eu
+dns_ovh_application_key = YOUR_APPLICATION_KEY
+dns_ovh_application_secret = YOUR_SECRET
+dns_ovh_consumer_key = YOUR_PERSONAL_KEY
+```
+
+```
+chmod 600 /etc/certs/.ovhapi
+```
+
+Generate the certificate for your ```website.com``` and ```*.website.com```, they are two separate certificates but they will be put in the same file.
+```
+sudo certbot certonly --dns-ovh --dns-ovh-credentials /etc/certs/.ovhapi -d website.com -d *.website.com
+```
+
+You can do in several steps to get the two certifiactes in two different files with 
+```
+certbot certonly --dns-ovh --dns-ovh-credentials ~/.ovhapi -d *.website.com
+```
+Or make it automatically with no interaction with
+```
+certbot certonly --dns-ovh --dns-ovh-credentials ~/.ovhapi --non-interactive --agree-tos --email mon@email.fr -d website.com -d *.website.com
+```
+
+Then
+```
+sudo snap install --classic certbot
+sudo ln -s /snap/bin/certbot /usr/bin/certbot
+```
+
+
 ## Useful additions  <a name="Additions"></a>
 
 Explains tamplatags, templates base, dictioary, the document access system  ...
