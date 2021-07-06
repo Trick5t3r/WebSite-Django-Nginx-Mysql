@@ -12,7 +12,7 @@ A website for a completely classic school class coded in django-nginx-mysql
 ## Introduction <a name="introduction"></a>
 The purpose of this repository is to help anyone create a website. In my case, I created a website for my class during my first year of preparatory class for the "grandes écoles", this class is called HX2. Hope this tutorial and my code helps you out, and if you have any questions or issues please feel free to contact me.
 
-This whole tutorial was done with hx2 as the site name, so if you want to change it adapt the set of files provided accordingly. 
+This whole tutorial was done with hx2 as the site name, so if you want to change it adapt the set of files provided accordingly. The server used was an ubuntu 20.04.
 
 The structure of the site is simple: a home page (which in my case brings together school subjects), a presentation page of these sections with sub-sections, and finally a sub-sections page presenting the documents grouped by topic.
 
@@ -28,6 +28,12 @@ We will first see how to configure the site backend with django and then we will
 
 ## Mysql Set Up <a name="Mysql"></a>
 If you don't want to set up mysql skip this section and adapt the settings file as explain after.
+
+__1. Installation of Mysql__
+```bash
+sudo apt install mysql-server
+```
+
 
 ## Django Set Up <a name="Django"></a>
 __1. Depedencies__
