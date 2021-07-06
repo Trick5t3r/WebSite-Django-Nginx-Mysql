@@ -185,6 +185,30 @@ sudo snap install --classic certbot
 sudo ln -s /snap/bin/certbot /usr/bin/certbot
 ```
 
+When the certificates will expire run ```certbot renew``` to genrate new ones.
+
+__2. Nginx installation__
+
+```
+sudo apt-get update
+sudo apt-get -y install nginx
+
+sudo service nginx restart
+```
+Put my nginx file in ```/etc/nginx/sites-available/website.com``` and make 
+```sudo ln -s /etc/nginx/sites-available/website.com /etc/nginx/sites-enabled/```
+
+Finally
+```/sudo systemctl restart nginx```
+
+NB : 
+* ```/etc/nginx/nginx.conf``` is the main configuration file, you can modify its properties to suit your requirements 
+* ```/var/log/nginx/access.log``` Nginx save all the access demand
+* ```/var/log/nginx/error.log``` is the file where Nginx save all the errors
+
+To check if a certificate is correct you can use "Online Certificate Status Protoocl (OCSP)"
+Run ```openssl s_client -connect website.com:443 -tls1_2 -tlsextdebug -status | grep "OCSP Response Status: successful" ```
+And ```openssl s_client -showcerts -connect website.com:443 -tls1_2 -tlsextdebug -status | grep "OCS" ```
 
 ## Useful additions  <a name="Additions"></a>
 
