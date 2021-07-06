@@ -241,7 +241,7 @@ Put my nginx file in ```/etc/nginx/sites-available/website.com``` and make
 ```sudo ln -s /etc/nginx/sites-available/website.com /etc/nginx/sites-enabled/```
 
 Finally
-```/sudo systemctl restart nginx```
+```sudo systemctl restart nginx```
 
 NB : 
 * ```/etc/nginx/nginx.conf``` is the main configuration file, you can modify its properties to suit your requirements 
