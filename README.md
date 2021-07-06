@@ -30,9 +30,45 @@ We will first see how to configure the site backend with django and then we will
 If you don't want to set up mysql skip this section and adapt the settings file as explain after.
 
 __1. Installation of Mysql__
-```bash
+Install Mysql
+```
 sudo apt install mysql-server
 ```
+
+Run the security script 
+```
+sudo mysql_secure_installation
+```
+
+Access to mysql
+```
+sudo mysql
+```
+
+Create the user that will be used by django and its password :
+```sql
+CREATE USER 'djangoUser' IDENTIFIED BY 'password';
+```
+
+Create the database that django will used by django
+```sql
+CREATE DATABASE djangoDB;
+```
+
+And give him the privilegies
+```sql
+GRANT ALL PRIVILEGES ON djangoDB.* TO 'djangoUser'@'localhost';
+FLUSH PRIVILEGES;
+```
+And your database is ready, all you have to do now is allow python to have access to it.
+
+__2.Connect python to mysql__
+Install the package
+```
+pip3 install mysqlclient
+```
+
+
 
 
 ## Django Set Up <a name="Django"></a>
@@ -70,9 +106,9 @@ ALLOWED_HOSTS = ['127.0.0.1', 'website.com']
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'hx2DB',
-        'USER': 'hx2User',
-        'PASSWORD' : 'VivelaHX2!',
+        'NAME': 'djangoDB',
+        'USER': 'djangoUser',
+        'PASSWORD' : 'password!',
         'HOST' : 'localhost',
         'PORT' : '3306',
     }
