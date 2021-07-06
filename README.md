@@ -29,7 +29,7 @@ We will first see how to configure the site backend with django and then we will
 ## Mysql Set Up <a name="Mysql"></a>
 If you don't want to set up mysql skip this section and adapt the settings file as explain after.
 
-#### 1. Installation of Mysql
+### 1. Installation of Mysql
 
 Install Mysql
 ```
@@ -63,7 +63,7 @@ FLUSH PRIVILEGES;
 ```
 And your database is ready, all you have to do now is allow python to have access to it.
 
-__2.Connect python to mysql__
+### 2.Connect python to mysql
 
 Install the package
 ```
