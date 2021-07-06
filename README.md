@@ -165,6 +165,7 @@ And normally you have finished installing your django server, it is operational.
 ## Nginx Set Up <a name="Nginx"></a>
 
 __1. Setup let's encrypt with OVH for https__
+(this part of the tutorial is largely inspired by https://buzut.net/certbot-challenge-dns-ovh-wildcard/ )
 
 Install dependecies
 ```python
@@ -185,16 +186,23 @@ Create the config file at ```/etc/logrotate.d/cerbot``` with:
 }
 ```
 
-Create the API
+Create the API. In the following command replace ```{domain.ext}``` by your domain and becareful it is the the root domain name .
 ```
 GET /domain/zone/
-GET: /domain/zone/{domain.name}/
+GET /domain/zone/{domain.name}/
 GET /domain/zone/{domain.ext}/status
 GET /domain/zone/{domain.ext}/record
 GET /domain/zone/{domain.ext}/record/*
 POST /domain/zone/{domain.ext}/record
 POST /domain/zone/{domain.ext}/refresh
 DELETE /domain/zone/{domain.ext}/record/*
+```
+If this is too restrictive for you, you may prefer these commands: 
+```
+GET /domain/zone/*
+PUT /domain/zone/*
+POST /domain/zone/*
+DELETE /domain/zone/*
 ```
 
 Connect to https://api.ovh.com/createToken/ to get the rigth information access for your API
@@ -231,7 +239,21 @@ sudo snap install --classic certbot
 sudo ln -s /snap/bin/certbot /usr/bin/certbot
 ```
 
-When the certificates will expire run ```certbot renew``` to genrate new ones.
+When the certificates will expire run ```certbot renew``` to genrate new ones, but this is probably not compatible with the DNS plugins that we have just set up.
+Thus you can make a small script to automate this, put in ```/usr/local/sbin/renewCerts.sh```
+```
+#!/bin/bash
+
+/usr/local/bin/certbot certonly --dns-ovh --dns-ovh-credentials /root/.ovhapi --non-interactive --agree-tos --email mon@email.fr -d buzut.fr
+/usr/local/bin/certbot certonly --dns-ovh --dns-ovh-credentials /root/.ovhapi --non-interactive --agree-tos --email mon@email.fr -d *.buzut.fr
+```
+
+You can then call it once a month with a crontab and you can be sure that you have always up-to-date certificates. 
+```
+22 4 5 * * /usr/local/sbin/renewCerts.sh > /dev/null 2>&1
+```
+
+Voila, your ssl certificate is ready.
 
 __2. Nginx installation__
 
