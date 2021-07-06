@@ -244,8 +244,8 @@ Thus you can make a small script to automate this, put in ```/usr/local/sbin/ren
 ```
 #!/bin/bash
 
-/usr/local/bin/certbot certonly --dns-ovh --dns-ovh-credentials /root/.ovhapi --non-interactive --agree-tos --email mon@email.fr -d buzut.fr
-/usr/local/bin/certbot certonly --dns-ovh --dns-ovh-credentials /root/.ovhapi --non-interactive --agree-tos --email mon@email.fr -d *.buzut.fr
+/usr/local/bin/certbot certonly --dns-ovh --dns-ovh-credentials /root/.ovhapi --non-interactive --agree-tos --email mon@email.fr -d website.com
+/usr/local/bin/certbot certonly --dns-ovh --dns-ovh-credentials /root/.ovhapi --non-interactive --agree-tos --email mon@email.fr -d *.website.com
 ```
 
 You can then call it once a month with a crontab and you can be sure that you have always up-to-date certificates. 
