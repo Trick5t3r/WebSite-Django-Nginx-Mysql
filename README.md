@@ -30,6 +30,7 @@ We will first see how to configure the site backend with django and then we will
 If you don't want to set up mysql skip this section and adapt the settings file as explain after.
 
 __1. Installation of Mysql__
+
 Install Mysql
 ```
 sudo apt install mysql-server
@@ -63,6 +64,7 @@ FLUSH PRIVILEGES;
 And your database is ready, all you have to do now is allow python to have access to it.
 
 __2.Connect python to mysql__
+
 Install the package
 ```
 pip3 install mysqlclient
@@ -133,6 +135,7 @@ USE_TZ = True
 
 
 __2. Set up gunicorn__
+
 Edit the file ```gunicorn_start.sh```
 * Put your own name
 ```python
@@ -162,6 +165,7 @@ And normally you have finished installing your django server, it is operational.
 ## Nginx Set Up <a name="Nginx"></a>
 
 __1. Setup let's encrypt with OVH for https__
+
 Install dependecies
 ```python
 pip3 install certbot 
@@ -264,6 +268,7 @@ __ Useful commands __
 
 
 ## Complements : le Siphoneur <a name="Siphoneur"></a>
+
 The "Siphoneur" aims to siphon a main directory with the same structure as the site and to put all the documents directly on the website automatically. 
 Change the absolute path or remove the ```#``` to take the path as argument
 ```python
