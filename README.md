@@ -122,8 +122,8 @@ And normally you have finished installing your django server, it is operational.
 __1. Setup let's encrypt with OVH for https__
 Install dependecies
 ```python
-pip install certbot 
-pip install certbot-dns-ovh
+pip3 install certbot 
+pip3 install certbot-dns-ovh
 ```
 
 Create the config file at ```/etc/logrotate.d/cerbot``` with:
