@@ -29,7 +29,7 @@ We will first see how to configure the site backend with django and then we will
 ## Mysql Set Up <a name="Mysql"></a>
 If you don't want to set up mysql skip this section and adapt the settings file as explain after.
 
-### 1. Installation of Mysql
+### 1. Mysql Installation
 
 Install Mysql
 ```
@@ -74,7 +74,7 @@ pip3 install mysqlclient
 
 
 ## Django Set Up <a name="Django"></a>
-__1. Depedencies__
+### 1. Depedencies
 
 Installation of necessary packages 
 ```
@@ -85,7 +85,7 @@ pip3 install django-widget-tweaks
 pip3 install django-cleanup
 ```
 
-__2. Set up django__
+### 2. Set up django
 
 Place the folder hx2 in the right directory
 
@@ -134,7 +134,7 @@ USE_TZ = True
 ```
 
 
-__2. Set up gunicorn__
+### 3. Set up gunicorn
 
 Edit the file ```gunicorn_start.sh```
 * Put your own name
@@ -164,7 +164,7 @@ And normally you have finished installing your django server, it is operational.
 
 ## Nginx Set Up <a name="Nginx"></a>
 
-__1. Setup let's encrypt with OVH for https__
+### 1. Setup let's encrypt with OVH for https
 (this part of the tutorial is largely inspired by https://buzut.net/certbot-challenge-dns-ovh-wildcard/ )
 
 Install dependecies
@@ -255,7 +255,7 @@ You can then call it once a month with a crontab and you can be sure that you ha
 
 Voila, your ssl certificate is ready.
 
-__2. Nginx installation__
+### 2. Nginx installation
 
 ```
 sudo apt-get update
