@@ -7,7 +7,7 @@ A website for a completely classic school class coded in django-nginx-mysql
 3. [Django Set Up](#Django)
 4. [Nginx Set Up](#Nginx)
 5. [Usefull Additions](#Additions)
-6. [Complements : le Siphoneur](#Siphoneur)
+6. [Complements : the Siphoneur](#Siphoneur)
 
 ## Introduction <a name="introduction"></a>
 The purpose of this repository is to help anyone create a website. In my case, I created a website for my class during my first year of preparatory class for the "grandes écoles", this class is called HX2. Hope this tutorial and my code helps you out, and if you have any questions or issues please feel free to contact me.
@@ -289,7 +289,7 @@ __ Useful commands __
 * ```python python3 manage.py runscript``` (but requires configurations so prefer the method that I use in "le siphoneur")
 
 
-## Complements : le Siphoneur <a name="Siphoneur"></a>
+## Complements : the Siphoneur <a name="Siphoneur"></a>
 
 The "Siphoneur" aims to siphon a main directory with the same structure as the site and to put all the documents directly on the website automatically. 
 Change the absolute path or remove the ```#``` to take the path as argument
