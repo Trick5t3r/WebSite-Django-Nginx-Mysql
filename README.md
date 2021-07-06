@@ -63,7 +63,7 @@ FLUSH PRIVILEGES;
 ```
 And your database is ready, all you have to do now is allow python to have access to it.
 
-### 2.Connect python to mysql
+### 2. Connect python to mysql
 
 Install the package
 ```
@@ -85,7 +85,7 @@ pip3 install django-widget-tweaks
 pip3 install django-cleanup
 ```
 
-### 2. Set up django
+### 2. Django Set Up
 
 Place the folder hx2 in the right directory
 
@@ -134,7 +134,7 @@ USE_TZ = True
 ```
 
 
-### 3. Set up gunicorn
+### 3. Gunicorn Set Up
 
 Edit the file ```gunicorn_start.sh```
 * Put your own name
@@ -164,7 +164,7 @@ And normally you have finished installing your django server, it is operational.
 
 ## Nginx Set Up <a name="Nginx"></a>
 
-### 1. Setup let's encrypt with OVH for https
+### 1. Let's Encrypt Set Up with OVH for ssl securisation
 (this part of the tutorial is largely inspired by https://buzut.net/certbot-challenge-dns-ovh-wildcard/ )
 
 Install dependecies
@@ -255,7 +255,7 @@ You can then call it once a month with a crontab and you can be sure that you ha
 
 Voila, your ssl certificate is ready.
 
-### 2. Nginx installation
+### 2. Nginx Installation
 
 ```
 sudo apt-get update
@@ -278,7 +278,7 @@ To check if a certificate is correct you can use "Online Certificate Status Prot
 Run ```openssl s_client -connect website.com:443 -tls1_2 -tlsextdebug -status | grep "OCSP Response Status: successful" ```
 And ```openssl s_client -showcerts -connect website.com:443 -tls1_2 -tlsextdebug -status | grep "OCS" ```
 
-## Useful additions  <a name="Additions"></a>
+## Useful Additions  <a name="Additions"></a>
 
 Explains tamplatags, templates base, dictioary, the document access system  ...
 
