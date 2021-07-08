@@ -88,9 +88,9 @@ WSGI_APPLICATION = 'hx2Site.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'hx2DB',
-        'USER': 'hx2User',
-        'PASSWORD' : 'VivelaHX2!',
+        'NAME': 'djangoDB',
+        'USER': 'djangoUser',
+        'PASSWORD' : 'ViveDjango!',
         'HOST' : 'localhost',
         'PORT' : '3306',
     }
