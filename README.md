@@ -170,6 +170,9 @@ GROUP=www-data                                     # the group to run as (*)
 Save and exit the file
 
 Copy the file ```gunicorn_hx2Site.service``` in ```/etc/systemd/system/```
+```
+sudo cp gunicorn_hx2Site.service /etc/systemd/system/
+```
 
 Run the command ```service gunicorn_hx2Site start```
 
