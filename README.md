@@ -75,6 +75,12 @@ Install the package
 pip3 install mysqlclient
 ```
 
+If you have an error like me, you may be missing these two packages: 
+```
+sudo apt-get install libmysqlclient-dev
+sudo apt-get install libssl-dev
+```
+
 ## Django Set Up <a name="Django"></a>
 ### 1. Depedencies
 
