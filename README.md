@@ -48,7 +48,7 @@ sudo mysql
 
 Create the user that will be used by django and its password :
 ```sql
-CREATE USER 'djangoUser' IDENTIFIED BY 'password';
+CREATE USER 'djangoUser'@'localhost' IDENTIFIED BY 'password';
 ```
 
 Create the database that django will used by django
