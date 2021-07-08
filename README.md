@@ -305,7 +305,7 @@ And ```openssl s_client -showcerts -connect website.com:443 -tls1_2 -tlsextdebug
 Explains tamplatags, templates base, dictioary, the document access system  ...
 
 __ Useful commands __ 
-* ```python python3 manage.py runserver``` with ```python 0.0.0.0``` to listen on all interface, ```python --insecure``` (but dangerous)
+* ```python python3 manage.py runserver``` with ```0.0.0.0``` to listen on all interface, ```--insecure``` (but dangerous)
 * ```python python3 manage.py makemigrations``` and ```python python3 manage.py migrate```
 * ```python python3 manage.py shell```
 * ```python python3 manage.py runscript``` (but requires configurations so prefer the method that I use in "le siphoneur")
