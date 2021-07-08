@@ -152,6 +152,8 @@ python3 manage.py makemigrations
 python3 manage.py migrate
 ```
 
+(And if you don't have the right permissions, you can use  ```sudo chown -R www-data:www-data ./migrations```)
+
 ### 3. Gunicorn Set Up
 
 Edit the file ```gunicorn_start.sh```
@@ -316,6 +318,7 @@ __ Useful commands __
 * ```python python3 manage.py makemigrations``` and ```python python3 manage.py migrate```
 * ```python python3 manage.py shell```
 * ```python python3 manage.py runscript``` (but requires configurations so prefer the method that I use in "le siphoneur")
+* ```python python3 manage.py flush``` to erase the database
 
 
 ## Complements : the Siphoneur <a name="Siphoneur"></a>
