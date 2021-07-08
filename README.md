@@ -304,6 +304,10 @@ sudo apt-get -y install nginx
 
 sudo service nginx restart
 ```
+In my Nginx file, change :
+```
+```
+
 Put my nginx file in ```/etc/nginx/sites-available/website.com``` and make 
 ```sudo ln -s /etc/nginx/sites-available/website.com /etc/nginx/sites-enabled/```
 
