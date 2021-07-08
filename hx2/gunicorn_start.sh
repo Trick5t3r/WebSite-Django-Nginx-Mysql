@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -
 
 NAME="hx2Site"                              #Name of the application (*)
-DJANGODIR=/var/www/hx2/hx2Site/            # Django project directory (*)
-SOCKFILE=/var/www/hx2/run/gunicorn.sock        # we will communicate using this unix socket (*)
+DJANGODIR=/opt/hx2/hx2Site/            # Django project directory (*)
+SOCKFILE=/opt/hx2/run/gunicorn.sock        # we will communicate using this unix socket (*)
 USER=www-data                                        # the user to run as (*)
 GROUP=www-data                                     # the group to run as (*)
 NUM_WORKERS=1                                     # how many worker processes should Gunicorn spawn (*)
