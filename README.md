@@ -154,6 +154,11 @@ python3 manage.py migrate
 
 (And if you don't have the right permissions, you can use  ```sudo chown -R www-data:www-data ./migrations```)
 
+And create a super user
+```
+python3 manage.py createsuperuser
+```
+
 ### 3. Gunicorn Set Up
 
 Edit the file ```gunicorn_start.sh```
