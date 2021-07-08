@@ -160,6 +160,10 @@ python3 manage.py createsuperuser
 ```
 
 ### 3. Gunicorn Set Up
+Install it
+```
+pip3 install gunicorn
+```
 
 Edit the file ```gunicorn_start.sh```
 * Put your own name
