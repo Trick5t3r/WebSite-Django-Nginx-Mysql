@@ -157,8 +157,8 @@ NAME="hx2Site"                              #Name of the application (*)
 
 * Adapt the two following line with your right absolut path
 ```python
-DJANGODIR=/var/www/hx2/hx2Site/            # Django project directory (*)
-SOCKFILE=/var/www/hx2/run/gunicorn.sock        # we will communicate using this unix socket (*)
+DJANGODIR=/opt/hx2/hx2Site/            # Django project directory (*)
+SOCKFILE=/opt/hx2/run/gunicorn.sock        # we will communicate using this unix socket (*)
 
 ```
 
