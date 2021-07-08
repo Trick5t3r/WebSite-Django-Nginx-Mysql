@@ -95,6 +95,12 @@ __The in the settings file__
 ```python
 SECRET_KEY = 'YOUR_SECRET_KEY'
 ```
+
+You can generate one with (in ```python3 manage.py shell```) :
+```python
+from django.core.management.utils import get_random_secret_key  
+get_random_secret_key()
+```
    * change allowed hosts
 ```python
 ALLOWED_HOSTS = ['127.0.0.1', 'website.com']
