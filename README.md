@@ -146,6 +146,11 @@ USE_L10N = True
 USE_TZ = True
 ```
 
+See if everything is working by doing: 
+```
+python3 manage.py makemigrations
+python3 manage.py migrate
+```
 
 ### 3. Gunicorn Set Up
 
