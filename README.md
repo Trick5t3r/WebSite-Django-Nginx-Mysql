@@ -163,6 +163,7 @@ python3 manage.py createsuperuser
 Install it
 ```
 pip3 install gunicorn
+sudo apt-get install gunicorn
 ```
 
 Edit the file ```gunicorn_start.sh```
