@@ -306,6 +306,9 @@ sudo service nginx restart
 ```
 In my Nginx file, change :
 ```
+hx2.tlapp.net www.hx2.fr hx2.fr
+/var/www/hx2/hx2Site/media/static/
+/var/www/hx2/hx2Site/media/fichiersdeposes/
 ```
 
 Put my nginx file in ```/etc/nginx/sites-available/website.com``` and make 
