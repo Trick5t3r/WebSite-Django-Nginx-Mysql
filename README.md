@@ -94,7 +94,7 @@ pip3 install django-cleanup
 
 ### 2. Django Set Up
 
-Place the folder hx2 in the right directory
+Place the folder hx2 in the right directory (personally I placed it in ```/opt/``` )
 
 For the ubuntu 20 users, create a user "www-data" and a group "www-data" with the appropriate permissions
 
