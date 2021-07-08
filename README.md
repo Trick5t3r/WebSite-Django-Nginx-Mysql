@@ -174,6 +174,13 @@ GROUP=www-data                                     # the group to run as (*)
 ```
 Save and exit the file
 
+In the file ```gunicorn_hx2Site.service```, modify this lines so that it suits you:
+```
+Environment="LANG=fr_FR.UTF-8,LC_ALL=fr_FR.UTF-8"
+User=www-data
+ExecStart=/opt/hx2/gunicorn_start.sh
+```
+
 Copy the file ```gunicorn_hx2Site.service``` in ```/etc/systemd/system/```
 ```
 sudo cp gunicorn_hx2Site.service /etc/systemd/system/
