@@ -203,6 +203,7 @@ Create the config file at ```/etc/logrotate.d/cerbot``` with:
 ```
 
 Create the API. In the following command replace ```{domain.ext}``` by your domain and becareful it is the the root domain name .
+(You may need to install this package: ```sudo apt install libwww-perl```) 
 ```
 GET /domain/zone/
 GET /domain/zone/{domain.name}/
