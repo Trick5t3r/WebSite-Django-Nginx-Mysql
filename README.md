@@ -186,6 +186,11 @@ GROUP=www-data                                     # the group to run as (*)
 ```
 Save and exit the file
 
+Add an empty folder in ```hx2```
+```
+mkdir run
+```
+
 In the file ```gunicorn_hx2Site.service```, modify this lines so that it suits you:
 ```
 Environment="LANG=fr_FR.UTF-8,LC_ALL=fr_FR.UTF-8"
