@@ -65,13 +65,15 @@ And your database is ready, all you have to do now is allow python to have acces
 
 ### 2. Connect python to mysql
 
+Install pip if you don't have it :
+```
+sudo apt install python3-pip
+```
+
 Install the package
 ```
 pip3 install mysqlclient
 ```
-
-
-
 
 ## Django Set Up <a name="Django"></a>
 ### 1. Depedencies
