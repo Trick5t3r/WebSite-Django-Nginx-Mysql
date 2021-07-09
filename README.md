@@ -203,6 +203,13 @@ Copy the file ```gunicorn_hx2Site.service``` in ```/etc/systemd/system/```
 sudo cp gunicorn_hx2Site.service /etc/systemd/system/
 ```
 
+Before starting the server, do:  
+```python
+python3 manage.py makemigrations
+python3 manage.py migrate
+python3 manage.py collectstatic
+```
+
 Run the command ```service gunicorn_hx2Site start```
 
 And normally you have finished installing your django server, it is operational. You can join it on the port 8000 in localhost or on your local network if you opened this port.
@@ -336,6 +343,11 @@ NB :
 To check if a certificate is correct you can use "Online Certificate Status Protoocl (OCSP)"
 Run ```openssl s_client -connect website.com:443 -tls1_2 -tlsextdebug -status | grep "OCSP Response Status: successful" ```
 And ```openssl s_client -showcerts -connect website.com:443 -tls1_2 -tlsextdebug -status | grep "OCS" ```
+
+
+
+## Normally everything should work, connect to the django admin interface to create a group for example "2021" and the corresponding "Année" and assign it to the admin user. 
+
 
 ## Useful Additions  <a name="Additions"></a>
 
