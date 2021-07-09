@@ -230,9 +230,10 @@ Create the config file at ```/etc/logrotate.d/cerbot``` with:
         create 640 root adm
 }
 ```
-
-Create the API. In the following command replace ```{domain.ext}``` by your domain and becareful it is the the root domain name .
-(You may need to install this package: ```sudo apt install libwww-perl```) 
+Connect to https://api.ovh.com/createToken/ to get the token for the API
+Enter the right information
+For validity enter ILLIMITED
+And in the Rights, enter the following command by replacing ```{domain.ext}``` by your domain and becareful it is the the root domain name .
 ```
 GET /domain/zone/
 GET /domain/zone/{domain.name}/
@@ -243,7 +244,7 @@ POST /domain/zone/{domain.ext}/record
 POST /domain/zone/{domain.ext}/refresh
 DELETE /domain/zone/{domain.ext}/record/*
 ```
-If this is too restrictive for you, you may prefer these commands: 
+And if this is too restrictive for you, you may prefer these commands: 
 ```
 GET /domain/zone/*
 PUT /domain/zone/*
@@ -251,9 +252,9 @@ POST /domain/zone/*
 DELETE /domain/zone/*
 ```
 
-Connect to https://api.ovh.com/createToken/ to get the rigth information access for your API
+That is finish for the token.
 
-Create ```/root/.ovhapi``` and add:
+Now, create ```/root/.ovhapi``` and add:
 ```
 dns_ovh_endpoint = ovh-eu
 dns_ovh_application_key = YOUR_APPLICATION_KEY
