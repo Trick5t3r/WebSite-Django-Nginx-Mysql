@@ -24,6 +24,12 @@ class AnneeMiddleware:
     def __call__(self, request):
         # Code to be executed for each request before
         # the view (and later middleware) are called.
+        
+        # we ignore the urls of the administration in order to be able to create the first accounts otherwise nothing works 
+        if request.path.startswith(reverse('admin:index')):
+                return self.get_response(request)
+
+          
         if request.path != reverse("logout") and request.user.is_authenticated and request.GET.get('setYear', '') != '' and request.session.get('currentYear', '') != request.GET.get('setYear', ''):
                 yearsAvailable = []
                 groupsAvailable = request.user.groups.order_by("-name")
