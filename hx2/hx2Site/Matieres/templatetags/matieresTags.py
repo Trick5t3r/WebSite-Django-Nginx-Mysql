@@ -3,14 +3,18 @@ import re
 
 ### Natural sort ###
 
-def atoi(text):
-    return int(text) if text.isdigit() else text
+def atof(text):
+    try:
+        retval = float(text)
+    except ValueError:
+        retval = text
+    return retval
 
 def natural_keys(text):
     '''
     Coded found here : https://stackoverflow.com/questions/5967500/how-to-correctly-sort-a-string-with-a-number-inside
     '''
-    return [ atoi(c) for c in re.split(r'(\d+)', text.grouper) ]
+    return [ atof(c) for c in re.split(r'[+-]?([0-9]+(?:[.][0-9]*)?|[.][0-9]+)', text.grouper) ]
 
 ####################
 
